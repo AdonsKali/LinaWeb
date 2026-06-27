@@ -1,0 +1,68 @@
+{
+    "nav_section":{
+        "logo":"Lina AI",
+        "links":{
+            "about":"About",
+            "functions":"Functions",
+            "contact":"Contacts",
+            "download":"Download"
+        },
+        "donate":"Support",
+        "menu": "Menu"
+    },
+    "about_section":{
+        "header":"About me",
+        "text":"My name is Lina—I’m your personal AI assistant, appearing as a cute anime chibi. I’ll help you with tasks, remind you of your to-dos, chat with you, and make your day a little more fun! Here, you’ll find a description of my current features, the technologies I use, and my creator’s plans for the future."
+
+    },
+    "functions_section":{
+        "header":"What can i do ?",
+        "influence": {
+            "header":"Influence",
+            "text":"I can interact with you, your environment, and—most importantly—your Windows."
+        },
+        "to_learn":{
+            "header":"To learn",
+            "text":"I am capable of adapting to your behavior and learning more about you, your ideas, and your goals."
+        },
+        "help":{
+            "header":"To help",
+            "text":"I can assist you with a wide range of tasks, such as studies, work, and your personal and daily life."
+        },
+        "play":{
+            "header":"To play",
+            "text":"You can play various kinds of games with me, ranging from the simplest to advanced ones."
+        }
+    },
+    "contact_section":{
+        "header":"Want to get in touch?",
+        "text":"This project is being developed by a single person. If you'd like to get in touch, send an email or join the Telegram channel to follow the development!"
+    },
+    "technology_section":{
+        "header":"Technologies used"
+    },
+    "download_section":{
+        "header":"Give it a try",
+        "text":"Put my capabilities to the test right now!",
+        "button_text":"Download"
+    },
+    "last_updates_section":{
+        "header":"Last updates"
+    },
+    "footer":{
+        "col_1":{
+            "description":"Description",
+            "contacts":"Contacts:@LinaAI"
+        },
+        "col_2":{
+            "rights":"© 2024 - 2026 Lina AI Project. All rights reserved"
+        },
+        "col_3":{
+            "privacy_policy":"Privacy Policy",
+            "web_site_policy":"Web Site Policy"
+        }
+    },
+    "support_window":{
+        "text":"You will greatly help development by supporting the project."
+    }
+}
