@@ -27,8 +27,6 @@ const LatestUpdates: React.FC = () => {
 
   useEffect(() => {
     loadCommits();
-    
-    // Автообновление каждые 5 минут
     const interval = setInterval(loadCommits, 300000);
     return () => clearInterval(interval);
   }, []);
@@ -38,14 +36,10 @@ const LatestUpdates: React.FC = () => {
       setLoading(true);
       setError(null);
       
-      // Используем только один правильный путь
-      // Добавляем timestamp для обхода кеша
-      const timestamp = Date.now();
-      const response = await fetch(`/commits-cache.json?t=${timestamp}`);
+      const response = await fetch(`/commits-cache.json`);
       
       if (!response.ok) {
-        // Если файл не найден, пробуем альтернативный путь
-        const altResponse = await fetch(`/LinaWeb/commits-cache.json?t=${timestamp}`);
+        const altResponse = await fetch(`/LinaWeb/commits-cache.json`);
         if (!altResponse.ok) {
           throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
@@ -57,12 +51,10 @@ const LatestUpdates: React.FC = () => {
       
       const data = await response.json();
       
-      // Проверяем, что пришли коммиты
       if (Array.isArray(data) && data.length > 0) {
         setCommits(data);
         setLastUpdate(new Date().toLocaleString());
       } else if (data && data.message) {
-        // Если GitHub API вернул ошибку
         throw new Error(`GitHub API: ${data.message}`);
       } else {
         setCommits([]);
@@ -72,18 +64,16 @@ const LatestUpdates: React.FC = () => {
       console.error('Failed to load commits:', err);
       setError(err instanceof Error ? err.message : 'Неизвестная ошибка');
       
-      // Пытаемся загрузить из localStorage (если есть)
       try {
         const cached = localStorage.getItem('cached-commits');
         if (cached) {
           const parsed = JSON.parse(cached);
           if (Array.isArray(parsed) && parsed.length > 0) {
             setCommits(parsed);
-            setError(null); // Сбрасываем ошибку, так как есть кеш
+            setError(null); 
           }
         }
       } catch (e) {
-        // ignore
       }
     } finally {
       setLoading(false);
