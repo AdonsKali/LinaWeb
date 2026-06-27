@@ -1,9 +1,9 @@
+// Updates.tsx
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Block from "../ui/Block";
 import AboutSection from "../ui/AboutSection";
 import { useTranslation } from "react-i18next";
-
 
 interface Commit {
   sha: string;
@@ -18,15 +18,19 @@ interface Commit {
 }
 
 const LatestUpdates: React.FC = () => {
-  const { t } = useTranslation(); // <- Переносим хук внутрь компонента
+  const { t } = useTranslation();
   
   const [commits, setCommits] = useState<Commit[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [debug, setDebug] = useState<string>("");
+  const [lastUpdate, setLastUpdate] = useState<string | null>(null);
 
   useEffect(() => {
     loadCommits();
+    
+    // Автообновление каждые 5 минут
+    const interval = setInterval(loadCommits, 300000);
+    return () => clearInterval(interval);
   }, []);
 
   const loadCommits = async () => {
@@ -34,45 +38,32 @@ const LatestUpdates: React.FC = () => {
       setLoading(true);
       setError(null);
       
-      // Пробуем разные возможные пути
-      const paths = [
-        '/commits-cache.json',
-        '/LinaWeb/commits-cache.json',
-        './commits-cache.json'
-      ];
+      // Используем только один правильный путь
+      // Добавляем timestamp для обхода кеша
+      const timestamp = Date.now();
+      const response = await fetch(`/commits-cache.json?t=${timestamp}`);
       
-      let data = null;
-      let usedPath = '';
-      
-      for (const path of paths) {
-        try {
-          console.log(`Trying path: ${path}`);
-          const response = await fetch(path);
-          if (response.ok) {
-            data = await response.json();
-            usedPath = path;
-            break;
-          }
-        } catch (e) {
-          console.log(`Failed on ${path}`);
+      if (!response.ok) {
+        // Если файл не найден, пробуем альтернативный путь
+        const altResponse = await fetch(`/LinaWeb/commits-cache.json?t=${timestamp}`);
+        if (!altResponse.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
+        const data = await altResponse.json();
+        setCommits(Array.isArray(data) ? data : []);
+        setLastUpdate(new Date().toLocaleString());
+        return;
       }
       
-      if (!data) {
-        throw new Error('Could not load commits from any path');
-      }
+      const data = await response.json();
       
-      setDebug(`Loaded from: ${usedPath}, Data type: ${Array.isArray(data) ? 'array' : typeof data}`);
-      
-      // Проверяем, что data - это массив коммитов
-      if (Array.isArray(data)) {
+      // Проверяем, что пришли коммиты
+      if (Array.isArray(data) && data.length > 0) {
         setCommits(data);
-      } else if (data && typeof data === 'object') {
-        // Если пришел объект с ошибкой или другими данными
-        if (data.message) {
-          throw new Error(`API Error: ${data.message}`);
-        }
-        setCommits([]);
+        setLastUpdate(new Date().toLocaleString());
+      } else if (data && data.message) {
+        // Если GitHub API вернул ошибку
+        throw new Error(`GitHub API: ${data.message}`);
       } else {
         setCommits([]);
       }
@@ -80,6 +71,20 @@ const LatestUpdates: React.FC = () => {
     } catch (err) {
       console.error('Failed to load commits:', err);
       setError(err instanceof Error ? err.message : 'Неизвестная ошибка');
+      
+      // Пытаемся загрузить из localStorage (если есть)
+      try {
+        const cached = localStorage.getItem('cached-commits');
+        if (cached) {
+          const parsed = JSON.parse(cached);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            setCommits(parsed);
+            setError(null); // Сбрасываем ошибку, так как есть кеш
+          }
+        }
+      } catch (e) {
+        // ignore
+      }
     } finally {
       setLoading(false);
     }
@@ -105,8 +110,7 @@ const LatestUpdates: React.FC = () => {
     });
   };
 
-
-  if (loading) {
+  if (loading && commits.length === 0) {
     return (
       <div className="bg-white/80 rounded-2xl p-6 shadow-lg">
         <div className="animate-pulse space-y-3">
@@ -119,7 +123,7 @@ const LatestUpdates: React.FC = () => {
     );
   }
 
-  if (error) {
+  if (error && commits.length === 0) {
     return (
       <div className="bg-white/80 rounded-2xl p-6 shadow-lg">
         <p className="text-red-500 text-sm">❌ {error}</p>
@@ -129,74 +133,69 @@ const LatestUpdates: React.FC = () => {
         >
           Попробовать снова
         </button>
-        {debug && (
-          <p className="text-xs text-gray-400 mt-2">Debug: {debug}</p>
-        )}
       </div>
     );
   }
 
-  if (commits.length === 0) {
-    return (
-      <div className="bg-white/80 rounded-2xl p-6 shadow-lg">
-        <p className="text-purple-500 text-sm">ostringstream Пока нет данных о коммитах</p>
-        {debug && (
-          <p className="text-xs text-gray-400 mt-2">Debug: {debug}</p>
-        )}
-      </div>
-    );
-  }
-
-  return (<>
-    <AboutSection id="updates" aria-label="Последние обновления и изменения в Lina AI">{t('last_updates_section.header')}</AboutSection>
-    <Block >
-      <div className="space-y-2 max-h-100 overflow-y-auto">
-        {commits.map((commit, index) => (
-          <motion.a
-            key={commit.sha}
-            href={commit.html_url}
+  return (
+    <>
+      <AboutSection id="updates" aria-label="Последние обновления и изменения в Lina AI">
+        {t('last_updates_section.header')}
+      </AboutSection>
+      <Block>
+        <div className="space-y-2 max-h-100 overflow-y-auto">
+          {commits.map((commit, index) => (
+            <motion.a
+              key={commit.sha}
+              href={commit.html_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block p-3 rounded-xl hover:bg-purple-50 transition-all border border-purple-100"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <div className="flex gap-3">
+                <div className="shrink-0 w-2 h-2 mt-2 rounded-full bg-green-500"></div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-purple-900 text-sm font-medium wrap-break-word">
+                    {commit.commit.message.split('\n')[0]}
+                  </p>
+                  <div className="flex gap-3 mt-1 text-xs text-purple-500">
+                    <span>{formatDate(commit.commit.author.date)}</span>
+                    <span>•</span>
+                    <span>{commit.commit.author.name}</span>
+                    <span className="font-mono text-purple-300">
+                      {commit.sha.substring(0, 7)}
+                    </span>
+                  </div>
+                </div>
+                <svg className="w-4 h-4 text-purple-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </div>
+            </motion.a>
+          ))}
+        </div>
+        
+        <div className="mt-4 pt-3 border-t border-purple-100 text-center">
+          <a 
+            href="https://github.com/AdonsKali/LinaDesk/commits/dev"
             target="_blank"
             rel="noopener noreferrer"
-            className="block p-3 rounded-xl hover:bg-purple-50 transition-all border border-purple-100"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: index * 0.1 }}
+            className="text-sm text-purple-600 hover:text-purple-800 underline"
           >
-            <div className="flex gap-3">
-              <div className="shrink-0 w-2 h-2 mt-2 rounded-full bg-green-500"></div>
-              <div className="flex-1 min-w-0">
-                <p className="text-purple-900 text-sm font-medium wrap-break-word">
-                  {commit.commit.message.split('\n')[0]}
-                </p>
-                <div className="flex gap-3 mt-1 text-xs text-purple-500">
-                  <span>{formatDate(commit.commit.author.date)}</span>
-                  <span>•</span>
-                  <span>{commit.commit.author.name}</span>
-                  <span className="font-mono text-purple-300">
-                    {commit.sha.substring(0, 7)}
-                  </span>
-                </div>
-              </div>
-              <svg className="w-4 h-4 text-purple-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </div>
-          </motion.a>
-        ))}
-      </div>
-      
-      <div className="mt-4 pt-3 border-t border-purple-100 text-center">
-        <a 
-          href="https://github.com/AdonsKali/LinaDesk/commits/dev"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm text-purple-600 hover:text-purple-800 underline"
-        >
-          Все изменения в LinaDesk →
-        </a>
-      </div>
-    </Block>
-  </>);
+            Все изменения в LinaDesk →
+          </a>
+          {lastUpdate && (
+            <p className="text-xs text-purple-300 mt-2">
+              Обновлено: {lastUpdate}
+            </p>
+          )}
+        </div>
+      </Block>
+    </>
+  );
 };
 
 export default LatestUpdates;

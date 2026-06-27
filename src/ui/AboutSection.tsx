@@ -16,12 +16,12 @@ export default function AboutSection({children, id}: AboutSection){
             className="xl:max-w-3xl md:max-w-2xl sm:max-w-xs max-w-2xs text-center space-y-4 w-xl "
             
             >
-            <h2 className="xl:text-3xl lg:text-2xl text-2xl font-extrabold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent drop-shadow
+            <h2 className="xl:text-3xl lg:text-2xl text-2xl font-extrabold bg-linear-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent drop-shadow
  
             ">
                 {children}
             </h2>
-            <hr className="h-px my-2 w-full bg-gradient-to-r from-pink-500 via-purple-500 to-pink-400 border-0"/>
+            <hr className="h-px my-2 w-full bg-linear-to-r from-pink-500 via-purple-500 to-pink-400 border-0"/>
             </motion.div>
         </div>
     )
