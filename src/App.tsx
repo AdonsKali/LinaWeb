@@ -7,7 +7,7 @@ export default function App() {
   return (
     <>
       <Helmet>
-        <title>Lina AI - Персональный AI-ассистент в образе аниме-чибика</title>
+        <title>Lina AI - Персональный AI-агент в образе аниме-чибика</title>
         <meta name="description" content="Lina AI - ваш персональный AI-ассистент в виде милого аниме-чибика. Помощь в задачах, напоминания, общение и улучшение вашего дня." />
         <meta name="keywords" content="Lina AI, AI-ассистент, персональный помощник, аниме чиби, искусственный интеллект" />
         <meta name="robots" content="index, follow" />
@@ -20,22 +20,22 @@ export default function App() {
         <meta name="yandex-verification" content="YOUR_YANDEX_VERIFICATION_CODE" />
 
         {/* Open Graph */}
-        <meta property="og:title" content="Lina AI - Персональный AI-ассистент в образе аниме-чибика" />
-        <meta property="og:description" content="Lina AI - ваш персональный AI-ассистент в виде милого аниме-чибика. Помощь в задачах, напоминания, общение и улучшение вашего дня." />
+        <meta property="og:title" content="Lina AI - Персональный AI-агент в образе аниме-чибика" />
+        <meta property="og:description" content="Lina AI - ваш персональный AI-агент в виде милого аниме-чибика. Помощь в задачах, напоминания, общение и улучшение вашего дня." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://linaweb.page.gd/" />
-        <meta property="og:image" content="https://linaweb.page.gd/chibis/lina_sit.gif" />
-        <meta property="og:image:alt" content="Lina AI - персональный AI-ассистент в образе аниме-чибика" />
+        <meta property="og:url" content="https://linaweb-coral.vercel.app" />
+        <meta property="og:image" content="https://linaweb-coral.vercel.app/chibis/lina_sit.png" />
+        <meta property="og:image:alt" content="Lina AI - персональный AI-агент в образе аниме-чибика" />
         <meta property="og:locale" content="ru_RU" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Lina AI - Персональный AI-ассистент в образе аниме-чибика" />
-        <meta name="twitter:description" content="Lina AI - ваш персональный AI-ассистент в виде милого аниме-чибика. Помощь в задачах, напоминания, общение и улучшение вашего дня." />
-        <meta name="twitter:image" content="https://linaweb.page.gd/chibis/lina_sit.gif" />
+        <meta name="twitter:title" content="Lina AI - Персональный AI-агент в образе аниме-чибика" />
+        <meta name="twitter:description" content="Lina AI - ваш персональный AI-агент в виде милого аниме-чибика. Помощь в задачах, напоминания, общение и улучшение вашего дня." />
+        <meta name="twitter:image" content="https://linaweb-coral.vercel.app/chibis/lina_sit.png" />
 
         {/* Canonical URL */}
-        <link rel="canonical" href="https://linaweb.page.gd/" />
+        <link rel="canonical" href="https://linaweb-coral.vercel.app" />
 
         {/* Preconnect to external resources */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />

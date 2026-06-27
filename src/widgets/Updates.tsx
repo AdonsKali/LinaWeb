@@ -1,4 +1,3 @@
-// Updates.tsx
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Block from "../ui/Block";
@@ -39,7 +38,7 @@ const LatestUpdates: React.FC = () => {
       const response = await fetch(`/commits-cache.json`);
       
       if (!response.ok) {
-        const altResponse = await fetch(`/LinaWeb/commits-cache.json`);
+        const altResponse = await fetch(`commits-cache.json`);
         if (!altResponse.ok) {
           throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
