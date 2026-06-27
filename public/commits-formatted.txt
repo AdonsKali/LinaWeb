@@ -1,0 +1,60 @@
+"sha": "bda10a5f75ff48a3077ca42160f6f805b5993350",
+"name": "AdonsKali",
+"date": "2026-05-30T15:10:56Z"
+"name": "AdonsKali",
+"date": "2026-05-30T15:10:56Z"
+"message": "feat(agent): implement image and audio analysis capabilities\n\n- Add support for processing images and audio files\n- Improve memory management and performance\n- Enhance user interaction with double-click functionality\n- Expand agent capabilities with new tools and prompts\n- Update documentation to reflect new features",
+"sha": "fe52923afa0d1c3671420b5a0ee63b8d7fdc7b7a",
+"html_url": "https://github.com/AdonsKali/LinaDesk/commit/bda10a5f75ff48a3077ca42160f6f805b5993350",
+"html_url": "https://github.com/AdonsKali",
+"html_url": "https://github.com/AdonsKali",
+"sha": "0f466a8c12c10b00feedffe27c3fb11a71f6580c",
+"html_url": "https://github.com/AdonsKali/LinaDesk/commit/0f466a8c12c10b00feedffe27c3fb11a71f6580c"
+"sha": "0f466a8c12c10b00feedffe27c3fb11a71f6580c",
+"name": "AdonsKali",
+"date": "2026-05-30T07:04:09Z"
+"name": "AdonsKali",
+"date": "2026-05-30T07:04:09Z"
+"message": "feat(client+backend): implement file drop functionality and update tool calls\n\n- Add file drop support in the client\n- Implement new statuses view to display file information\n- Update tool call parsing and handling in the backend\n- Modify message and UI models to support new file-related events\n- Refactor API service and WebSocket handler for new features\n- Update config files with new model paths and settings\n- Transition to a new model, Gemma4",
+"sha": "75ff38860fa6f983891342b0bcd4f9a4c5ac8e78",
+"html_url": "https://github.com/AdonsKali/LinaDesk/commit/0f466a8c12c10b00feedffe27c3fb11a71f6580c",
+"html_url": "https://github.com/AdonsKali",
+"html_url": "https://github.com/AdonsKali",
+"sha": "29ddfc2feb328b012d691fd90084a8fc850afd22",
+"html_url": "https://github.com/AdonsKali/LinaDesk/commit/29ddfc2feb328b012d691fd90084a8fc850afd22"
+"sha": "29ddfc2feb328b012d691fd90084a8fc850afd22",
+"name": "AdonsKali",
+"date": "2026-05-24T17:07:55Z"
+"name": "AdonsKali",
+"date": "2026-05-24T17:07:55Z"
+"message": "Update gitignore",
+"sha": "16215a4d91eab6cd0faf7513962ed1d02820caec",
+"html_url": "https://github.com/AdonsKali/LinaDesk/commit/29ddfc2feb328b012d691fd90084a8fc850afd22",
+"html_url": "https://github.com/AdonsKali",
+"html_url": "https://github.com/AdonsKali",
+"sha": "a7648230fef025ca76af67d0c4d82401cb4d2778",
+"html_url": "https://github.com/AdonsKali/LinaDesk/commit/a7648230fef025ca76af67d0c4d82401cb4d2778"
+"sha": "a7648230fef025ca76af67d0c4d82401cb4d2778",
+"name": "AdonsKali",
+"date": "2026-05-24T15:04:05Z"
+"name": "AdonsKali",
+"date": "2026-05-24T15:04:05Z"
+"message": "Add CUDA flags",
+"sha": "f6df346c8ee40d95ebb12cfd5b8d01045bc50a79",
+"html_url": "https://github.com/AdonsKali/LinaDesk/commit/a7648230fef025ca76af67d0c4d82401cb4d2778",
+"html_url": "https://github.com/AdonsKali",
+"html_url": "https://github.com/AdonsKali",
+"sha": "a3955e3320404cd7c2737f82b8807d1425bce338",
+"html_url": "https://github.com/AdonsKali/LinaDesk/commit/a3955e3320404cd7c2737f82b8807d1425bce338"
+"sha": "a3955e3320404cd7c2737f82b8807d1425bce338",
+"name": "AdonsKali",
+"date": "2026-05-24T14:51:47Z"
+"name": "AdonsKali",
+"date": "2026-05-24T14:51:47Z"
+"message": "Update requirements and installation",
+"sha": "5c3d58ebada675669e4649dafbdffa3f9cbe2648",
+"html_url": "https://github.com/AdonsKali/LinaDesk/commit/a3955e3320404cd7c2737f82b8807d1425bce338",
+"html_url": "https://github.com/AdonsKali",
+"html_url": "https://github.com/AdonsKali",
+"sha": "fe67f4910aa6f10d6156150f5b4215c2219f1a0a",
+"html_url": "https://github.com/AdonsKali/LinaDesk/commit/fe67f4910aa6f10d6156150f5b4215c2219f1a0a"
