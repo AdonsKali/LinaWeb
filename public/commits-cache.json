@@ -1,0 +1,412 @@
+[
+  {
+    "sha": "bda10a5f75ff48a3077ca42160f6f805b5993350",
+    "node_id": "C_kwDORIllg9oAKGJkYTEwYTVmNzVmZjQ4YTMwNzdjYTQyMTYwZjZmODA1YjU5OTMzNTA",
+    "commit": {
+      "author": {
+        "name": "AdonsKali",
+        "email": "derevianckin@mail.ru",
+        "date": "2026-05-30T15:10:56Z"
+      },
+      "committer": {
+        "name": "AdonsKali",
+        "email": "derevianckin@mail.ru",
+        "date": "2026-05-30T15:10:56Z"
+      },
+      "message": "feat(agent): implement image and audio analysis capabilities\n\n- Add support for processing images and audio files\n- Improve memory management and performance\n- Enhance user interaction with double-click functionality\n- Expand agent capabilities with new tools and prompts\n- Update documentation to reflect new features",
+      "tree": {
+        "sha": "fe52923afa0d1c3671420b5a0ee63b8d7fdc7b7a",
+        "url": "https://api.github.com/repos/AdonsKali/LinaDesk/git/trees/fe52923afa0d1c3671420b5a0ee63b8d7fdc7b7a"
+      },
+      "url": "https://api.github.com/repos/AdonsKali/LinaDesk/git/commits/bda10a5f75ff48a3077ca42160f6f805b5993350",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/AdonsKali/LinaDesk/commits/bda10a5f75ff48a3077ca42160f6f805b5993350",
+    "html_url": "https://github.com/AdonsKali/LinaDesk/commit/bda10a5f75ff48a3077ca42160f6f805b5993350",
+    "comments_url": "https://api.github.com/repos/AdonsKali/LinaDesk/commits/bda10a5f75ff48a3077ca42160f6f805b5993350/comments",
+    "author": {
+      "login": "AdonsKali",
+      "id": 75972026,
+      "node_id": "MDQ6VXNlcjc1OTcyMDI2",
+      "avatar_url": "https://avatars.githubusercontent.com/u/75972026?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/AdonsKali",
+      "html_url": "https://github.com/AdonsKali",
+      "followers_url": "https://api.github.com/users/AdonsKali/followers",
+      "following_url": "https://api.github.com/users/AdonsKali/following{/other_user}",
+      "gists_url": "https://api.github.com/users/AdonsKali/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/AdonsKali/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/AdonsKali/subscriptions",
+      "organizations_url": "https://api.github.com/users/AdonsKali/orgs",
+      "repos_url": "https://api.github.com/users/AdonsKali/repos",
+      "events_url": "https://api.github.com/users/AdonsKali/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/AdonsKali/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "AdonsKali",
+      "id": 75972026,
+      "node_id": "MDQ6VXNlcjc1OTcyMDI2",
+      "avatar_url": "https://avatars.githubusercontent.com/u/75972026?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/AdonsKali",
+      "html_url": "https://github.com/AdonsKali",
+      "followers_url": "https://api.github.com/users/AdonsKali/followers",
+      "following_url": "https://api.github.com/users/AdonsKali/following{/other_user}",
+      "gists_url": "https://api.github.com/users/AdonsKali/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/AdonsKali/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/AdonsKali/subscriptions",
+      "organizations_url": "https://api.github.com/users/AdonsKali/orgs",
+      "repos_url": "https://api.github.com/users/AdonsKali/repos",
+      "events_url": "https://api.github.com/users/AdonsKali/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/AdonsKali/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "0f466a8c12c10b00feedffe27c3fb11a71f6580c",
+        "url": "https://api.github.com/repos/AdonsKali/LinaDesk/commits/0f466a8c12c10b00feedffe27c3fb11a71f6580c",
+        "html_url": "https://github.com/AdonsKali/LinaDesk/commit/0f466a8c12c10b00feedffe27c3fb11a71f6580c"
+      }
+    ]
+  },
+  {
+    "sha": "0f466a8c12c10b00feedffe27c3fb11a71f6580c",
+    "node_id": "C_kwDORIllg9oAKDBmNDY2YThjMTJjMTBiMDBmZWVkZmZlMjdjM2ZiMTFhNzFmNjU4MGM",
+    "commit": {
+      "author": {
+        "name": "AdonsKali",
+        "email": "derevianckin@mail.ru",
+        "date": "2026-05-30T07:04:09Z"
+      },
+      "committer": {
+        "name": "AdonsKali",
+        "email": "derevianckin@mail.ru",
+        "date": "2026-05-30T07:04:09Z"
+      },
+      "message": "feat(client+backend): implement file drop functionality and update tool calls\n\n- Add file drop support in the client\n- Implement new statuses view to display file information\n- Update tool call parsing and handling in the backend\n- Modify message and UI models to support new file-related events\n- Refactor API service and WebSocket handler for new features\n- Update config files with new model paths and settings\n- Transition to a new model, Gemma4",
+      "tree": {
+        "sha": "75ff38860fa6f983891342b0bcd4f9a4c5ac8e78",
+        "url": "https://api.github.com/repos/AdonsKali/LinaDesk/git/trees/75ff38860fa6f983891342b0bcd4f9a4c5ac8e78"
+      },
+      "url": "https://api.github.com/repos/AdonsKali/LinaDesk/git/commits/0f466a8c12c10b00feedffe27c3fb11a71f6580c",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/AdonsKali/LinaDesk/commits/0f466a8c12c10b00feedffe27c3fb11a71f6580c",
+    "html_url": "https://github.com/AdonsKali/LinaDesk/commit/0f466a8c12c10b00feedffe27c3fb11a71f6580c",
+    "comments_url": "https://api.github.com/repos/AdonsKali/LinaDesk/commits/0f466a8c12c10b00feedffe27c3fb11a71f6580c/comments",
+    "author": {
+      "login": "AdonsKali",
+      "id": 75972026,
+      "node_id": "MDQ6VXNlcjc1OTcyMDI2",
+      "avatar_url": "https://avatars.githubusercontent.com/u/75972026?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/AdonsKali",
+      "html_url": "https://github.com/AdonsKali",
+      "followers_url": "https://api.github.com/users/AdonsKali/followers",
+      "following_url": "https://api.github.com/users/AdonsKali/following{/other_user}",
+      "gists_url": "https://api.github.com/users/AdonsKali/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/AdonsKali/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/AdonsKali/subscriptions",
+      "organizations_url": "https://api.github.com/users/AdonsKali/orgs",
+      "repos_url": "https://api.github.com/users/AdonsKali/repos",
+      "events_url": "https://api.github.com/users/AdonsKali/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/AdonsKali/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "AdonsKali",
+      "id": 75972026,
+      "node_id": "MDQ6VXNlcjc1OTcyMDI2",
+      "avatar_url": "https://avatars.githubusercontent.com/u/75972026?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/AdonsKali",
+      "html_url": "https://github.com/AdonsKali",
+      "followers_url": "https://api.github.com/users/AdonsKali/followers",
+      "following_url": "https://api.github.com/users/AdonsKali/following{/other_user}",
+      "gists_url": "https://api.github.com/users/AdonsKali/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/AdonsKali/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/AdonsKali/subscriptions",
+      "organizations_url": "https://api.github.com/users/AdonsKali/orgs",
+      "repos_url": "https://api.github.com/users/AdonsKali/repos",
+      "events_url": "https://api.github.com/users/AdonsKali/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/AdonsKali/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "29ddfc2feb328b012d691fd90084a8fc850afd22",
+        "url": "https://api.github.com/repos/AdonsKali/LinaDesk/commits/29ddfc2feb328b012d691fd90084a8fc850afd22",
+        "html_url": "https://github.com/AdonsKali/LinaDesk/commit/29ddfc2feb328b012d691fd90084a8fc850afd22"
+      }
+    ]
+  },
+  {
+    "sha": "29ddfc2feb328b012d691fd90084a8fc850afd22",
+    "node_id": "C_kwDORIllg9oAKDI5ZGRmYzJmZWIzMjhiMDEyZDY5MWZkOTAwODRhOGZjODUwYWZkMjI",
+    "commit": {
+      "author": {
+        "name": "AdonsKali",
+        "email": "derevianckin@mail.ru",
+        "date": "2026-05-24T17:07:55Z"
+      },
+      "committer": {
+        "name": "AdonsKali",
+        "email": "derevianckin@mail.ru",
+        "date": "2026-05-24T17:07:55Z"
+      },
+      "message": "Update gitignore",
+      "tree": {
+        "sha": "16215a4d91eab6cd0faf7513962ed1d02820caec",
+        "url": "https://api.github.com/repos/AdonsKali/LinaDesk/git/trees/16215a4d91eab6cd0faf7513962ed1d02820caec"
+      },
+      "url": "https://api.github.com/repos/AdonsKali/LinaDesk/git/commits/29ddfc2feb328b012d691fd90084a8fc850afd22",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/AdonsKali/LinaDesk/commits/29ddfc2feb328b012d691fd90084a8fc850afd22",
+    "html_url": "https://github.com/AdonsKali/LinaDesk/commit/29ddfc2feb328b012d691fd90084a8fc850afd22",
+    "comments_url": "https://api.github.com/repos/AdonsKali/LinaDesk/commits/29ddfc2feb328b012d691fd90084a8fc850afd22/comments",
+    "author": {
+      "login": "AdonsKali",
+      "id": 75972026,
+      "node_id": "MDQ6VXNlcjc1OTcyMDI2",
+      "avatar_url": "https://avatars.githubusercontent.com/u/75972026?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/AdonsKali",
+      "html_url": "https://github.com/AdonsKali",
+      "followers_url": "https://api.github.com/users/AdonsKali/followers",
+      "following_url": "https://api.github.com/users/AdonsKali/following{/other_user}",
+      "gists_url": "https://api.github.com/users/AdonsKali/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/AdonsKali/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/AdonsKali/subscriptions",
+      "organizations_url": "https://api.github.com/users/AdonsKali/orgs",
+      "repos_url": "https://api.github.com/users/AdonsKali/repos",
+      "events_url": "https://api.github.com/users/AdonsKali/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/AdonsKali/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "AdonsKali",
+      "id": 75972026,
+      "node_id": "MDQ6VXNlcjc1OTcyMDI2",
+      "avatar_url": "https://avatars.githubusercontent.com/u/75972026?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/AdonsKali",
+      "html_url": "https://github.com/AdonsKali",
+      "followers_url": "https://api.github.com/users/AdonsKali/followers",
+      "following_url": "https://api.github.com/users/AdonsKali/following{/other_user}",
+      "gists_url": "https://api.github.com/users/AdonsKali/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/AdonsKali/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/AdonsKali/subscriptions",
+      "organizations_url": "https://api.github.com/users/AdonsKali/orgs",
+      "repos_url": "https://api.github.com/users/AdonsKali/repos",
+      "events_url": "https://api.github.com/users/AdonsKali/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/AdonsKali/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "a7648230fef025ca76af67d0c4d82401cb4d2778",
+        "url": "https://api.github.com/repos/AdonsKali/LinaDesk/commits/a7648230fef025ca76af67d0c4d82401cb4d2778",
+        "html_url": "https://github.com/AdonsKali/LinaDesk/commit/a7648230fef025ca76af67d0c4d82401cb4d2778"
+      }
+    ]
+  },
+  {
+    "sha": "a7648230fef025ca76af67d0c4d82401cb4d2778",
+    "node_id": "C_kwDORIllg9oAKGE3NjQ4MjMwZmVmMDI1Y2E3NmFmNjdkMGM0ZDgyNDAxY2I0ZDI3Nzg",
+    "commit": {
+      "author": {
+        "name": "AdonsKali",
+        "email": "derevianckin@mail.ru",
+        "date": "2026-05-24T15:04:05Z"
+      },
+      "committer": {
+        "name": "AdonsKali",
+        "email": "derevianckin@mail.ru",
+        "date": "2026-05-24T15:04:05Z"
+      },
+      "message": "Add CUDA flags",
+      "tree": {
+        "sha": "f6df346c8ee40d95ebb12cfd5b8d01045bc50a79",
+        "url": "https://api.github.com/repos/AdonsKali/LinaDesk/git/trees/f6df346c8ee40d95ebb12cfd5b8d01045bc50a79"
+      },
+      "url": "https://api.github.com/repos/AdonsKali/LinaDesk/git/commits/a7648230fef025ca76af67d0c4d82401cb4d2778",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/AdonsKali/LinaDesk/commits/a7648230fef025ca76af67d0c4d82401cb4d2778",
+    "html_url": "https://github.com/AdonsKali/LinaDesk/commit/a7648230fef025ca76af67d0c4d82401cb4d2778",
+    "comments_url": "https://api.github.com/repos/AdonsKali/LinaDesk/commits/a7648230fef025ca76af67d0c4d82401cb4d2778/comments",
+    "author": {
+      "login": "AdonsKali",
+      "id": 75972026,
+      "node_id": "MDQ6VXNlcjc1OTcyMDI2",
+      "avatar_url": "https://avatars.githubusercontent.com/u/75972026?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/AdonsKali",
+      "html_url": "https://github.com/AdonsKali",
+      "followers_url": "https://api.github.com/users/AdonsKali/followers",
+      "following_url": "https://api.github.com/users/AdonsKali/following{/other_user}",
+      "gists_url": "https://api.github.com/users/AdonsKali/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/AdonsKali/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/AdonsKali/subscriptions",
+      "organizations_url": "https://api.github.com/users/AdonsKali/orgs",
+      "repos_url": "https://api.github.com/users/AdonsKali/repos",
+      "events_url": "https://api.github.com/users/AdonsKali/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/AdonsKali/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "AdonsKali",
+      "id": 75972026,
+      "node_id": "MDQ6VXNlcjc1OTcyMDI2",
+      "avatar_url": "https://avatars.githubusercontent.com/u/75972026?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/AdonsKali",
+      "html_url": "https://github.com/AdonsKali",
+      "followers_url": "https://api.github.com/users/AdonsKali/followers",
+      "following_url": "https://api.github.com/users/AdonsKali/following{/other_user}",
+      "gists_url": "https://api.github.com/users/AdonsKali/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/AdonsKali/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/AdonsKali/subscriptions",
+      "organizations_url": "https://api.github.com/users/AdonsKali/orgs",
+      "repos_url": "https://api.github.com/users/AdonsKali/repos",
+      "events_url": "https://api.github.com/users/AdonsKali/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/AdonsKali/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "a3955e3320404cd7c2737f82b8807d1425bce338",
+        "url": "https://api.github.com/repos/AdonsKali/LinaDesk/commits/a3955e3320404cd7c2737f82b8807d1425bce338",
+        "html_url": "https://github.com/AdonsKali/LinaDesk/commit/a3955e3320404cd7c2737f82b8807d1425bce338"
+      }
+    ]
+  },
+  {
+    "sha": "a3955e3320404cd7c2737f82b8807d1425bce338",
+    "node_id": "C_kwDORIllg9oAKGEzOTU1ZTMzMjA0MDRjZDdjMjczN2Y4MmI4ODA3ZDE0MjViY2UzMzg",
+    "commit": {
+      "author": {
+        "name": "AdonsKali",
+        "email": "derevianckin@mail.ru",
+        "date": "2026-05-24T14:51:47Z"
+      },
+      "committer": {
+        "name": "AdonsKali",
+        "email": "derevianckin@mail.ru",
+        "date": "2026-05-24T14:51:47Z"
+      },
+      "message": "Update requirements and installation",
+      "tree": {
+        "sha": "5c3d58ebada675669e4649dafbdffa3f9cbe2648",
+        "url": "https://api.github.com/repos/AdonsKali/LinaDesk/git/trees/5c3d58ebada675669e4649dafbdffa3f9cbe2648"
+      },
+      "url": "https://api.github.com/repos/AdonsKali/LinaDesk/git/commits/a3955e3320404cd7c2737f82b8807d1425bce338",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/AdonsKali/LinaDesk/commits/a3955e3320404cd7c2737f82b8807d1425bce338",
+    "html_url": "https://github.com/AdonsKali/LinaDesk/commit/a3955e3320404cd7c2737f82b8807d1425bce338",
+    "comments_url": "https://api.github.com/repos/AdonsKali/LinaDesk/commits/a3955e3320404cd7c2737f82b8807d1425bce338/comments",
+    "author": {
+      "login": "AdonsKali",
+      "id": 75972026,
+      "node_id": "MDQ6VXNlcjc1OTcyMDI2",
+      "avatar_url": "https://avatars.githubusercontent.com/u/75972026?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/AdonsKali",
+      "html_url": "https://github.com/AdonsKali",
+      "followers_url": "https://api.github.com/users/AdonsKali/followers",
+      "following_url": "https://api.github.com/users/AdonsKali/following{/other_user}",
+      "gists_url": "https://api.github.com/users/AdonsKali/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/AdonsKali/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/AdonsKali/subscriptions",
+      "organizations_url": "https://api.github.com/users/AdonsKali/orgs",
+      "repos_url": "https://api.github.com/users/AdonsKali/repos",
+      "events_url": "https://api.github.com/users/AdonsKali/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/AdonsKali/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "AdonsKali",
+      "id": 75972026,
+      "node_id": "MDQ6VXNlcjc1OTcyMDI2",
+      "avatar_url": "https://avatars.githubusercontent.com/u/75972026?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/AdonsKali",
+      "html_url": "https://github.com/AdonsKali",
+      "followers_url": "https://api.github.com/users/AdonsKali/followers",
+      "following_url": "https://api.github.com/users/AdonsKali/following{/other_user}",
+      "gists_url": "https://api.github.com/users/AdonsKali/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/AdonsKali/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/AdonsKali/subscriptions",
+      "organizations_url": "https://api.github.com/users/AdonsKali/orgs",
+      "repos_url": "https://api.github.com/users/AdonsKali/repos",
+      "events_url": "https://api.github.com/users/AdonsKali/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/AdonsKali/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "fe67f4910aa6f10d6156150f5b4215c2219f1a0a",
+        "url": "https://api.github.com/repos/AdonsKali/LinaDesk/commits/fe67f4910aa6f10d6156150f5b4215c2219f1a0a",
+        "html_url": "https://github.com/AdonsKali/LinaDesk/commit/fe67f4910aa6f10d6156150f5b4215c2219f1a0a"
+      }
+    ]
+  }
+]
