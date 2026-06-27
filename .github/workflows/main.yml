@@ -17,49 +17,54 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Create public directory
-        run: mkdir -p public
-      
       - name: Fetch commits from LinaDesk
         env:
           GITHUB_TOKEN: ${{ secrets.LINA_DESK_COMITS }}
         run: |
-          echo "📡 Fetching commits from AdonsKali/LinaDesk (dev branch)..."
+          echo "Fetching commits from AdonsKali/LinaDesk (dev branch)..."
           
+
+          mkdir -p public
+
           curl -L \
             -H "Authorization: Bearer $GITHUB_TOKEN" \
             -H "Accept: application/vnd.github+json" \
             "https://api.github.com/repos/AdonsKali/LinaDesk/commits?sha=dev&per_page=5" \
-            > commits-cache.json 
+            > public/commits-cache.json 
           
-          if grep -q '"Not Found"' commits-cache.json; then
+          if grep -q '"Not Found"' public/commits-cache.json; then
             echo "GitHub API error"
-            cat commits-cache.json
+            cat public/commits-cache.json
             exit 1
           fi
           
-          if grep -q '"message":' commits-cache.json && grep -q '"documentation_url"' commits-cache.json; then
+          if grep -q '"message":' public/commits-cache.json && grep -q '"documentation_url"' public/commits-cache.json; then
             echo "GitHub API error:"
-            cat commits-cache.json
+            cat public/commits-cache.json
             exit 1
           fi
           
-          COMMIT_COUNT=$(grep -o '"sha"' commits-cache.json | wc -l)
+          COMMIT_COUNT=$(grep -o '"sha"' public/commits-cache.json | wc -l)
           echo "Successfully fetched $COMMIT_COUNT commits"
           
-          # Метаинформация тоже в корень
           echo "{
             \"source\": \"AdonsKali/LinaDesk\",
             \"branch\": \"dev\",
             \"lastUpdated\": \"$(date -u +"%Y-%m-%dT%H:%M:%SZ")\"
-          }" > commits-meta.json
+          }" > public/commits-meta.json
+          
+          cat public/commits-cache.json | \
+            grep -E '("sha"|"message"|"date"|"name"|"html_url")' | \
+            sed 's/^[[:space:]]*//' > public/commits-formatted.txt || true
+          
+          echo "All files saved to public/"
       
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
-          git add commits-cache.json commits-meta.json  # ← Добавляем из корня
+          git add public/commits-cache.json public/commits-meta.json public/commits-formatted.txt
           
           if git diff --staged --quiet; then
             echo "No changes to commit"
@@ -69,28 +74,10 @@ jobs:
             echo "Changes committed"
           fi
       
-      - name: Format commits for display
+      - name: Trigger Vercel Deployment
+        if: success()
         run: |
-          # Создаем красиво отформатированную версию
-          cat public/commits-cache.json | \
-            grep -E '("sha"|"message"|"date"|"name"|"html_url")' | \
-            sed 's/^[[:space:]]*//' > public/commits-formatted.txt || true
-          
-          echo "Formatted commits saved"
-      
-      - name: Commit and push to LinaWeb
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          
-          git add public/commits-cache.json
-          git add public/commits-meta.json
-          git add public/commits-formatted.txt
-          
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "Sync commits from LinaDesk/dev [skip ci]"
-            git push
-            echo "Changes committed to LinaWeb"
-          fi
+          curl -X POST \
+            -H "Content-Type: application/json" \
+            -d '{}' \
+            "${{ secrets.VERCEL_DEPLOY_HOOK }}"
