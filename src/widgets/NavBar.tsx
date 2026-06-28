@@ -67,7 +67,7 @@ export default function Nav_bar() {
           backgroundSize: "100%",
         }}
       >
-        <div className="2xl:max-w-6xl 2xl:py-3 xl:max-w-5xl lg:py-2 lg:max-w-4xl md:max-w-3xl md:py-0 mx-auto items-center md:px-8 justify-between 2xl:px-6 px-4 py-3 flex md:gap-2">
+        <div className="2xl:max-w-7xl 2xl:py-3 xl:max-w-5xl lg:py-2 lg:max-w-4xl md:max-w-3xl md:py-0 mx-auto items-center md:px-8 justify-between 2xl:px-6 px-4 py-3 flex md:gap-2">
 
           {/* Логотип */}
           <motion.div
@@ -78,7 +78,7 @@ export default function Nav_bar() {
           </motion.div>
 
           {/* Десктопная навигация */}
-          <ul className="hidden md:flex space-x-2 2xl:space-x-8 lg:space-x-2 md:space-x-0 md:w-[60%]">
+          <ul className="hidden md:flex justify-center space-x-2 2xl:space-x-8 lg:space-x-2 md:space-x-0 md:w-[60%]">
             {links.map((link, i) => (
               <motion.li key={i} whileTap={{ scale: 0.95 }}>
                 <Button
