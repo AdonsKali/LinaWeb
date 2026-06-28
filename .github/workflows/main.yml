@@ -2,7 +2,7 @@ name: Update Commits Cache
 
 on:
   schedule:
-    - cron: '0 * * * *'  
+    - cron: '0 0 */3 * *'  
   workflow_dispatch:      
   push:
     branches: [ main, master ]
@@ -73,11 +73,3 @@ jobs:
             git push
             echo "Changes committed"
           fi
-      
-      - name: Trigger Vercel Deployment
-        if: success()
-        run: |
-          curl -X POST \
-            -H "Content-Type: application/json" \
-            -d '{}' \
-            "${{ secrets.VERCEL_DEPLOY_HOOK }}"
