@@ -22,15 +22,15 @@
             "text":"I can interact with you, your environment, and—most importantly—your Windows."
         },
         "to_learn":{
-            "header":"To learn",
+            "header":"Learn",
             "text":"I am capable of adapting to your behavior and learning more about you, your ideas, and your goals."
         },
         "help":{
-            "header":"To help",
+            "header":"Help",
             "text":"I can assist you with a wide range of tasks, such as studies, work, and your personal and daily life."
         },
         "play":{
-            "header":"To play",
+            "header":"Play",
             "text":"You can play various kinds of games with me, ranging from the simplest to advanced ones."
         }
     },

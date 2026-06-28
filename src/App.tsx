@@ -4,12 +4,14 @@ import i18n from './config/i18n';
 import LinaMainPage from "./pages/LinaMainPage"
 
 export default function App() {
+  const primaryKeywords = ['ИИ', 'ассистент', 'аниме', 'чиби', 'ai', 'character', 'agent', 'локальный', 'автоматизация', 'помощник', 'агент'];
+  
   return (
     <>
       <Helmet>
         <title>Lina AI - Персональный AI-агент в образе аниме-чибика</title>
-        <meta name="description" content="Lina AI - ваш персональный AI-ассистент в виде милого аниме-чибика. Помощь в задачах, напоминания, общение и улучшение вашего дня." />
-        <meta name="keywords" content="Lina AI, AI-ассистент, персональный помощник, аниме чиби, искусственный интеллект" />
+        <meta name="description" content="Lina AI - ваш персональный AI-агент в виде милого аниме-чибика. Помощь в задачах, напоминания, общение и улучшение вашего дня." />
+        <meta name="keywords" content={primaryKeywords.join(', ')} />
         <meta name="robots" content="index, follow" />
         <meta name="googlebot" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
