@@ -73,11 +73,3 @@ jobs:
             git push
             echo "Changes committed"
           fi
-      
-      - name: Trigger Vercel Deployment
-        if: success()
-        run: |
-          curl -X POST \
-            -H "Content-Type: application/json" \
-            -d '{}' \
-            "${{ secrets.VERCEL_DEPLOY_HOOK }}"
