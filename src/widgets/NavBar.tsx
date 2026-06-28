@@ -67,23 +67,23 @@ export default function Nav_bar() {
           backgroundSize: "100%",
         }}
       >
-        <div className="2xl:max-w-6xl 2xl:py-3 lg:py-2 lg:max-w-4xl md:max-w-3xl md:py-0 mx-auto justify-between items-center md:px-14 2xl:px-6 px-4 py-3 flex">
+        <div className="2xl:max-w-6xl 2xl:py-3 xl:max-w-5xl lg:py-2 lg:max-w-4xl md:max-w-3xl md:py-0 mx-auto items-center md:px-8 justify-between 2xl:px-6 px-4 py-3 flex md:gap-2">
 
           {/* Логотип */}
           <motion.div
-            className="md:ml-0 ml-10 2xl:text-3xl xl:text-xl lg:text-xl md:text-[12px] text-lg font-bold bg-linear-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent drop-shadow"
+            className="md:ml-0 ml-10 2xl:text-3xl xl:text-xl lg:text-xl md:text-[11px] text-lg font-bold bg-linear-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent drop-shadow"
             whileHover={{ scale: 1.25 }}
           >
             Lina AI
           </motion.div>
 
           {/* Десктопная навигация */}
-          <ul className="hidden md:flex space-x-2 2xl:space-x-8 lg:space-x-2 md:space-x-1">
+          <ul className="hidden md:flex space-x-2 2xl:space-x-8 lg:space-x-2 md:space-x-0 md:w-[60%]">
             {links.map((link, i) => (
               <motion.li key={i} whileTap={{ scale: 0.95 }}>
                 <Button
                   onClick={() => handleNavClick(link.href)}
-                  className="hover:ml-3 hover:mr-3 hover:shadow-pink-400"
+                    className="hover:ml-3 hover:mr-3 hover:shadow-pink-400"
                   icon={link.icon}
                 >
                   {linkNames[i]}
@@ -114,7 +114,7 @@ export default function Nav_bar() {
             </motion.div>
             {/* Переключатель языка */}
             <motion.div
-              className="flex gap-0.5 bg-white/30 backdrop-blur-sm rounded-full p-0.5 shadow-sm"
+              className="flex gap-0.5  bg-white/30 backdrop-blur-sm rounded-full p-0.5 shadow-sm"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 2.2 }}
@@ -122,7 +122,7 @@ export default function Nav_bar() {
 
               <button
                 onClick={() => changeLanguage('ru')}
-                className={`px-2.5 py-1 rounded-full text-[10px] lg:text-xs 2xl:text-sm font-medium transition-all duration-300 ${i18n.language === 'ru'
+                className={`px-2.5 py-1 rounded-full md:w-[50%] text-[10px] md:text-[8px] lg:text-xs 2xl:text-sm font-medium transition-all duration-300 ${i18n.language === 'ru'
                     ? 'bg-linear-to-r from-pink-500 to-purple-500 text-white shadow-md'
                     : 'text-purple-700 hover:bg-purple-100/50'
                   }`}
@@ -131,7 +131,7 @@ export default function Nav_bar() {
               </button>
               <button
                 onClick={() => changeLanguage('en')}
-                className={`px-2.5 py-1 rounded-full text-[10px] lg:text-xs 2xl:text-sm font-medium transition-all duration-300 ${i18n.language === 'en'
+                className={`px-2.5 py-1 rounded-full md:w-[50%] text-[10px] md:text-[8px] lg:text-xs 2xl:text-sm font-medium transition-all duration-300 ${i18n.language === 'en'
                     ? 'bg-linear-to-r from-pink-500 to-purple-500 text-white shadow-md'
                     : 'text-purple-700 hover:bg-purple-100/50'
                   }`}

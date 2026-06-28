@@ -41,8 +41,6 @@ export function useGitHubUpdates(repoOwner: string, repoName: string, refreshInt
 
   useEffect(() => {
     fetchCommits();
-    
-    // Автоматическое обновление каждые X миллисекунд
     const interval = setInterval(fetchCommits, refreshInterval);
     
     return () => clearInterval(interval);

@@ -55,7 +55,7 @@
             "contacts":"Contacts:@LinaAI"
         },
         "col_2":{
-            "rights":"© 2024 - 2026 Lina AI Project. All rights reserved"
+            "rights":"Lina AI Project. All rights reserved"
         },
         "col_3":{
             "privacy_policy":"Privacy Policy",
@@ -64,5 +64,23 @@
     },
     "support_window":{
         "text":"You will greatly help development by supporting the project."
-    }
+    },
+    "lina_bubble_messages": [
+        "Hi! I'm Lina ✨",
+        "How are you doing?",
+        "Let's chat!",
+        "I'm here to help",
+        "Smile! 😊",
+        "I love anime 💖",
+        "Want to go for a walk?",
+        "Let's explore the world together ! 🌎",
+        "Want some sakura tea? 🍵🌸",
+        "I know your password... just kidding! 😈",
+        "Za Warudo! 🌎⌛",
+        "Living in peace and harmony with the four elements ☯️",
+        "Lost, human?",
+        "I love playing Minecraft 🧊",
+        "I know how to listen and remember 🎧",
+        "Where's my AWP? 🥷"
+    ]
 }
