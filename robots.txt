@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://linaweb-coral.vercel.app/sitemap.xml
+
+# Crawl-delay: 5 # Allow crawling but with a small delay
+Host: https://linaweb-coral.vercel.app

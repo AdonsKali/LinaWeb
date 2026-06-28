@@ -15,10 +15,6 @@ export default function App() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
         <meta name="theme-color" content="#ffc0cb" />
 
-        {/* Verification tags for search engines */}
-        <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE" />
-        <meta name="yandex-verification" content="YOUR_YANDEX_VERIFICATION_CODE" />
-
         {/* Open Graph */}
         <meta property="og:title" content="Lina AI - Персональный AI-агент в образе аниме-чибика" />
         <meta property="og:description" content="Lina AI - ваш персональный AI-агент в виде милого аниме-чибика. Помощь в задачах, напоминания, общение и улучшение вашего дня." />
