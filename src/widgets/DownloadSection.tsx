@@ -25,7 +25,7 @@ export default function DownloadSection() {
                     <Button
                         className="sm:scale-110 md:scale-120 lg:scale-130 xl:scale-140 2xl:scale-150"
                         onClick={()=>{
-                            alert("Уже скоро / Coming soon")
+                            alert(t("download_section.notice"))
                         }}
                         icon={<FaDownload></FaDownload>}
                     >

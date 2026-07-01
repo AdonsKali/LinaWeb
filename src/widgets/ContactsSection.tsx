@@ -38,7 +38,7 @@ export default function ContactBlock() {
             className="bg-purple-100"
           >
             <Mail className="w-5 h-5 text-pink-500" />
-            AdonsKali
+            {t("contact_section.mail")}
           </Button>
           
           <Button
@@ -46,7 +46,7 @@ export default function ContactBlock() {
             className="bg-purple-100"
           >
             <Send className="w-8 h-5 text-purple-500" />
-            LinaAI
+            {t("contact_section.chanel")}
           </Button>
         </div>
       </motion.div>

@@ -93,10 +93,14 @@ const LatestUpdates: React.FC = () => {
     if (diffDays === 1) return "вчера";
     if (diffDays < 7) return `${diffDays} дн. назад`;
     
-    return date.toLocaleDateString("ru-RU", {
+    const data_format = (t("lang") == "RU") ? date.toLocaleDateString("ru-RU", {
+      day: "numeric",
+      month: "long"
+    }) : date.toLocaleDateString("en-EN", {
       day: "numeric",
       month: "long"
     });
+    return data_format;
   };
 
   if (loading && commits.length === 0) {
@@ -120,7 +124,7 @@ const LatestUpdates: React.FC = () => {
           onClick={loadCommits}
           className="mt-3 text-purple-600 hover:text-purple-800 underline text-sm"
         >
-          Попробовать снова
+          {t("last_updates_section.try_again")}
         </button>
       </div>
     );
@@ -174,11 +178,11 @@ const LatestUpdates: React.FC = () => {
             rel="noopener noreferrer"
             className="text-sm text-purple-600 hover:text-purple-800 underline"
           >
-            Все изменения в LinaDesk →
+            {t("last_updates_section.all_updates")}
           </a>
           {lastUpdate && (
             <p className="text-xs text-purple-300 mt-2">
-              Обновлено: {lastUpdate}
+              {t("last_updates_section.updated")}: {lastUpdate}
             </p>
           )}
         </div>

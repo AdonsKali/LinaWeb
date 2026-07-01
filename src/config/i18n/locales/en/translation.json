@@ -1,4 +1,5 @@
 {
+    "lang":"EN",
     "nav_section":{
         "logo":"Lina AI",
         "links":{
@@ -36,7 +37,9 @@
     },
     "contact_section":{
         "header":"Want to get in touch?",
-        "text":"This project is being developed by a single person. If you'd like to get in touch, send an email or join the Telegram channel to follow the development!"
+        "text":"This project is being developed by a single person. If you'd like to get in touch, send an email or join the Telegram channel to follow the development!",
+        "mail":"Mail",
+        "chanel":"Chanel"
     },
     "technology_section":{
         "header":"Technologies used"
@@ -44,10 +47,15 @@
     "download_section":{
         "header":"Give it a try",
         "text":"Put my capabilities to the test right now!",
-        "button_text":"Download"
+        "button_text":"Download",
+        "notice": "Coming soon..."
     },
     "last_updates_section":{
-        "header":"Last updates"
+        "header":"Last updates",
+        "try_again":"Try again",
+        "all_updates":"All updates in LinaDesk ->",
+        "updated":"Updated"
+
     },
     "footer":{
         "col_1":{
